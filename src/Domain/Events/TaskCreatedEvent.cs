@@ -4,10 +4,10 @@ namespace TodolistDemo.Domain.Events;
 
 public class TaskCreatedEvent : BaseEvent
 {
-    public TaskCreatedEvent(Task task)
+    public TaskCreatedEvent(Entities.Task task)
     {
         Task = task;
     }
 
-    public Task Task { get; }
+    public Entities.Task Task { get; }
 }
