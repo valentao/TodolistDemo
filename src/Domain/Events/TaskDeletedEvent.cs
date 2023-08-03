@@ -4,10 +4,10 @@ namespace TodolistDemo.Domain.Events;
 
 public class TaskDeletedEvent : BaseEvent
 {
-    public TaskDeletedEvent(Task task)
+    public TaskDeletedEvent(Entities.Task task)
     {
         Task = task;
     }
 
-    public Task Task { get; }
+    public Entities.Task Task { get; }
 }
