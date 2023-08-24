@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TodolistDemo.Domain.Entities;
 
-public class Task : BaseAuditableEntity
+public class TodoItem : BaseAuditableEntity
 {
     [Column(TypeName = "nvarchar(100)")]
     public string Name { get; set; }
 
-    public TaskPriorityLevel Priority { get; set; }
+    public PriorityLevel Priority { get; set; }
 
     [Display(Name = "Deadline")]
     public DateTime? DateDeadline { get; set; }
@@ -26,16 +26,16 @@ public class Task : BaseAuditableEntity
         {
             if (value && !_done)
             {
-                AddDomainEvent(new TaskCompletedEvent(this));
+                AddDomainEvent(new TodoItemCompletedEvent(this));
             }
 
             _done = value;
         }
     }
 
-    [Display(Name = "Parent task")]
-    public int? TaskParentId { get; set; }
+    [Display(Name = "Parent item")]
+    public int? TodoItemParentId { get; set; }
 
-    [Display(Name = "Parent task")]
-    public Task? TaskParent { get; set; }
+    [Display(Name = "Parent item")]
+    public TodoItem? TodoItemParent { get; set; }
 }
