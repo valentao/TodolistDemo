@@ -1,6 +1,6 @@
 ﻿namespace TodolistDemo.Domain.Enums;
 
-public enum TaskPriorityLevel
+public enum PriorityLevel
 {
     None = 0,
     Low = 1,
