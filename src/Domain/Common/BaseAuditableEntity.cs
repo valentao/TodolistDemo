@@ -8,11 +8,11 @@ public abstract class BaseAuditableEntity : BaseEntity
     public DateTime DateCreated { get; set; }
 
     [Display(Name = "Created by")]
-    public int UserCreatedId { get; set; }
+    public string? UserCreatedId { get; set; }
 
     [Display(Name = "Date Modified")]
     public DateTime DateModified { get; set; }
 
     [Display(Name = "Modified by")]
-    public int UserModifiedId { get; set; }
+    public string? UserModifiedId { get; set; }
 }
